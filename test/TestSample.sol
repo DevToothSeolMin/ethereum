@@ -1,17 +1,17 @@
-pragma solidity >=0.4.22;
+pragma solidity >=0.4.0 <0.6.0;
 
 import "truffle/Assert.sol";
 import "truffle/DeployedAddresses.sol";
-import "../contracts/sample.sol";
+import "../contracts/SampleCoin.sol";
 
 contract TestSample {
     function testSample() public {
-            Sample sampleContract = new Sample();
+            SampleCoin sampleCoinContract = new SampleCoin();
 
-            Assert.equal(sampleContract.getNum(), 0, "Get Num : 0");
+            Assert.equal(sampleCoinContract.get(), 0, "Get Num : 0");
 
-            sampleContract.addNum(3);
+            sampleCoinContract.mint(3);
 
-            Assert.equal(sampleContract.getNum(), 3, "Get Num : 3");
+            Assert.equal(sampleCoinContract.get(), 3, "Get Num : 3");
     }
 }

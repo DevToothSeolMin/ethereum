@@ -1,5 +1,5 @@
-var Sample = artifacts.require("Sample");
+var SampleCoin = artifacts.require("SampleCoin");
 
 module.exports = function(deployer) {
-  deployer.deploy(Sample);
+  deployer.deploy(SampleCoin);
 };
